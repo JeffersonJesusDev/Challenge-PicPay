@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Transaction {
     @Id
@@ -27,6 +28,4 @@ public class Transaction {
     private LocalDateTime timestamp;
 
 
-    public Transaction() {
-    }
 }
