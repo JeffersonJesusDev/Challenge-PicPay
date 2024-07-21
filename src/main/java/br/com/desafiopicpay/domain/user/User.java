@@ -1,8 +1,8 @@
 package br.com.desafiopicpay.domain.user;
 
+import br.com.desafiopicpay.dto.UserDTO;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.usertype.UserType;
 
 import java.math.BigDecimal;
 
@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class User {
     @Id
@@ -27,6 +28,13 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserTyper userType;
 
-    public User() {
+    public User(UserDTO data) {
+        this.firstName = data.firstName();
+        this.secondName = data.secondName();
+        this.balance = data.balance();
+        this.userType = data.userType();
+        this.document = data.document();
+        this.password = data.password();
+        this.email = data.email();
     }
 }

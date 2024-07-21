@@ -1,6 +1,7 @@
 package br.com.desafiopicpay.domain.transaction;
 
 import br.com.desafiopicpay.domain.user.User;
+import br.com.desafiopicpay.dto.TransactionDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,6 +27,5 @@ public class Transaction {
     @JoinColumn(name = "receiver_id")
     private User receiver;
     private LocalDateTime timestamp;
-
 
 }
